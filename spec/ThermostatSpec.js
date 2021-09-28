@@ -11,6 +11,16 @@ describe("Thermostat", function() {
     expect(thermostat.getTemperature()).toEqual(20);
    })
 
+   it("should be possible to increase the temperature of 1 degree", function() {
+    thermostat.up()
+    expect(thermostat.getTemperature()).toEqual(21);
+   })
+
+   it("should be possible to decrease the temperature of 1 degree", function() {
+    thermostat.down()
+    expect(thermostat.getTemperature()).toEqual(19);
+   })
+
    it("should be possible to increase the temperature", function() {
     thermostat.increaseTemp(5)
     expect(thermostat.getTemperature()).toEqual(25);
