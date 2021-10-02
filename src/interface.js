@@ -6,6 +6,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelector("#power-saving-mode").innerHTML =
       thermostat.isPowerSavingModeOn() ? "ON" : "OFF";
+      
+      const displayWeather = (city) => {
+      const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=a3d9eb01d4de82b9b8d0849ef604dbed&units=metric`
+      fetch(url).then((response) => {
+        return response.json()
+      })
+      .then((data) => {
+        document.querySelector("#current_temperature").innerHTML = data.main.temp;
+      })
+    }
+    const city = document.querySelector("#city");
+    city.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+       let cityUpdated = city.value;
+       displayWeather(cityUpdated)
+      }
+    });
   };
 
   const thermostat = new Thermostat();

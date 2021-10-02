@@ -79,6 +79,7 @@ describe("Thermostat", function() {
    })
 
    it("should show the energy usage as high-usage otherwise", function(){ 
+    thermostat.switchPowerSavingModeOff()
     thermostat.increaseTemp(10)
     expect(thermostat.energyUsage()).toEqual("high-usage");
    })

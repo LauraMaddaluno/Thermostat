@@ -1,14 +1,21 @@
 body {
   text-align: center;
+  margin-top: 25%;
+  font-size: 30px;
 }
+
+#city{
+  font-size: large;
+}
+
 .low-usage {
   color: green;
 }
-  
+
 .medium-usage {
   color: black;
 }
-  
+
 .high-usage {
   color: red;
 }

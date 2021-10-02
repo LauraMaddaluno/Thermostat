@@ -23,6 +23,7 @@ class Thermostat {
   down(){
     this.decreaseTemp(1)
   }
+  
   increaseTemp(increase) {
     if (this.isMaxTemperature(increase)){
       return;
